@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ProgressBar, Button} from 'react-bootstrap'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { createSearchParams, Navigate, useNavigate } from 'react-router-dom'
 import { QuestionData } from '../assets/data/questiondata'
 
 
@@ -16,8 +16,6 @@ const Question = () => {
 
     const navigate = useNavigate() ;
 
-    console.log('totalScore', totalScore);
-
     //버튼 클릭 시 1 추가함
     const handleClickButton = (no, type) =>{
         const newScore = totalScore.map((s) => 
@@ -28,8 +26,21 @@ const Question = () => {
         if(QuestionData.length !== questionNO + 1) {
             setQuestionNo(questionNO + 1);
         } else {
+            //mbti 도출 
+            const mbti = newScore.reduce(
+                (acc, curr) =>
+                acc + (curr.score >= 2 ? curr.id.substring(0,1) : curr.id.substring(1,2)),
+                ""
+            );
+
             //결과 페이지로 이동~
-            navigate("/result");
+            navigate({
+                pathname : "/result",
+                search : `?${createSearchParams({
+                    mbti : mbti,
+                })}`
+            });
+
         }
      
 

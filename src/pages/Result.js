@@ -3,21 +3,32 @@ import React from 'react'
 import styled from 'styled-components'
 import PangImage from '../assets/ggompang.jpeg'
 import Button from 'react-bootstrap/Button'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ResultData } from '../assets/data/resultdata'
 
 const Result = () => {
     const navigate = useNavigate();
+    const [SearchParams] = useSearchParams();
+    const mbti = SearchParams.get('mbti');
+    //최종적으로 도출하는 결과 객체 ㅇㅇ
+    const [resultData, setResultData] = React.useState({});
 
+    React.useEffect(() =>{
+        const result = ResultData.find((s) => s.best === mbti);
+        setResultData(result);
+    }, [mbti])
+
+    console.log(resultData);
+ 
     return (    
     <Wrapper>
         <Header>대구가톨릭대학교 MBTI TEST</Header>
         <Contents>
             <Title>결과 보기</Title>
             <LogoImage>
-                <img src={ResultData[0].image} className="rounded-circle" width={350} height={350}/>
+                <img src={resultData.image} className="rounded-circle" width={350} height={350}/>
             </LogoImage>
-            <Desc>나의 MBTI는 !? {ResultData[0].name}</Desc>
+            <Desc>나의 MBTI는 !? {resultData.name}</Desc>
             <Button style={{fontFamily : "SimKyungha"}} onClick={() => navigate("/")} >
                 
                 테스트 다시하기</Button>
