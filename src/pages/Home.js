@@ -1,7 +1,7 @@
 import React from 'react'
 //css를 자바스크립트에서 사용
 import styled from 'styled-components'
-import PangImage from '../assets/ggompang.jpeg'
+import PangImage from '../assets/maindcu.png'
 import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
 
@@ -35,7 +35,7 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.div`
-    background-color : pink;
+    background-color : #99b3ff;
     height : 100vh;
     width : 100%;
 

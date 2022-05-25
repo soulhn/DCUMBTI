@@ -77,8 +77,8 @@ const Question = () => {
         //프로그레스바
         <Wrapper>
             
-            <ProgressBar striped variant="danger" now={(questionNO / QuestionData.length)*100 } style={{marginTop: '20px'}} />
-            <Title>{QuestionData[0].title}</Title>
+            <ProgressBar striped variant="success" now={(questionNO / QuestionData.length)*100 } style={{marginTop: '20px'}} />
+            <Title>{QuestionData[questionNO].title}</Title>
             
             <ButtonGroup>
                 <Button onClick={() => handleClickButton(1, QuestionData[questionNO].type)} style={{width : "40%", minHeight : "200px", fontSize : "15pt"}}>{QuestionData[questionNO].answera}</Button>
@@ -92,7 +92,7 @@ const Question = () => {
 export default Question;
 
 const Wrapper = styled.div`
-    background-color : pink;
+    background-color : #99b3ff;
     height : 100vh;
     width : 100%;
 

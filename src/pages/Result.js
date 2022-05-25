@@ -41,7 +41,7 @@ export default Result;
 
 
 const Wrapper = styled.div`
-    background-color : pink;
+    background-color : #99b3ff;
     height : 100vh;
     width : 100%;
 
