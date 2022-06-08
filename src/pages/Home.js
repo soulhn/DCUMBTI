@@ -21,7 +21,7 @@ const Home = () => {
         <Contents>
             <Title>나의 MBTI는 !?</Title>
             <LogoImage>
-                <img src={PangImage} className="rounded-circle" width={350} height={350}/>
+                <img alt="main" src={PangImage} className="rounded-circle" width={350} height={350}/>
             </LogoImage>
             <Desc>DCU와 함께하는 MBTI 검사!</Desc>
             <Button style={{fontFamily : "SimKyungha"}} onClick={handleClickButton}>
