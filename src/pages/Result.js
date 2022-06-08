@@ -1,7 +1,6 @@
 import React from 'react'
 //css를 자바스크립트에서 사용
 import styled from 'styled-components'
-import PangImage from '../assets/ggompang.jpeg'
 import Button from 'react-bootstrap/Button'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ResultData } from '../assets/data/resultdata'
