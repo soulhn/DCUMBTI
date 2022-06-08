@@ -17,7 +17,7 @@ const Home = () => {
 
     return (
     <Wrapper>
-        <Header>대구가톨릭대학교 MBTI TEST</Header>
+        <Header>대구가톨릭대학교</Header>
         <Contents>
             <Title>나의 MBTI는 !?</Title>
             <LogoImage>

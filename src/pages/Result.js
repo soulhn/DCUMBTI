@@ -21,7 +21,7 @@ const Result = () => {
  
     return (    
     <Wrapper>
-        <Header>대구가톨릭대학교 MBTI TEST</Header>
+        <Header>대구가톨릭대학교</Header>
         <Contents>
             <Title>결과 보기</Title>
             <LogoImage>
