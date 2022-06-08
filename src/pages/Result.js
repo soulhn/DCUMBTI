@@ -25,7 +25,7 @@ const Result = () => {
         <Contents>
             <Title>결과 보기</Title>
             <LogoImage>
-                <img src={resultData.image} className="rounded-circle" width={350} height={350}/>
+                <img alt="result img" src={resultData.image} className="rounded-circle" width={350} height={350}/>
             </LogoImage>
             <Desc>나의 MBTI는 !? {resultData.name}</Desc>
             <Button style={{fontFamily : "SimKyungha"}} onClick={() => navigate("/")} >
